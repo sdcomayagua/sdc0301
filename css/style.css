@@ -988,6 +988,8 @@ input.mail_bt::placeholder {
 .sdc-col{margin-bottom: 18px;}
 
 .sdc-product-card{background:#fff; border-radius: 16px; overflow:hidden; box-shadow: 0 14px 28px rgba(0,0,0,.10); border: 1px solid rgba(0,0,0,.06); height: 100%; display:flex; flex-direction:column;}
+.sdc-product-card{cursor:pointer; -webkit-tap-highlight-color: transparent;}
+.sdc-product-card:active{transform: scale(.99);}
 .sdc-thumb{position:relative; width:100%; padding-top: 100%; background:#f6f7fb;}
 .sdc-thumb img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
 
@@ -1027,4 +1029,70 @@ input.mail_bt::placeholder {
   .sdc-brand-text{font-size: 18px;}
   .sdc-brand-logo{width: 46px; height: 46px;}
   .sdc-select{min-width: 100%;}
+
+  /* More usable on phone */
+  .sdc-catalog-header{position: sticky; top: 0; z-index: 40; background: rgba(242,242,242,.92); backdrop-filter: blur(8px); padding: 10px 0 12px; margin: 12px 0 12px; border-bottom: 1px solid rgba(0,0,0,.06);}
+  .sdc-catalog-controls{width: 100%;}
+  .sdc-toggle{width: 100%; justify-content: space-between;}
+  .sdc-desc{display:none;}
+  .sdc-name{font-size: 13px; min-height: 32px;}
+  .sdc-now{font-size: 13px;}
+}
+
+/* Ultra-small phones: 1 column */
+@media (max-width: 360px){
+  .sdc-col{flex: 0 0 100%; max-width: 100%;}
+}
+
+/* =====================
+   PRODUCT MODAL (PRO)
+   ===================== */
+
+body.sdc-modal-open{overflow:hidden; touch-action: none;}
+
+.sdc-modal{position:fixed; inset:0; z-index: 9999; opacity:0; pointer-events:none; transition: opacity .18s ease;}
+.sdc-modal.is-open{opacity:1; pointer-events:auto;}
+
+.sdc-modal-backdrop{position:absolute; inset:0; background: rgba(0,0,0,.55);}
+
+.sdc-modal-dialog{position:relative; margin: 12px auto; width: min(980px, calc(100% - 24px)); max-height: calc(100% - 24px); background: #fff; border-radius: 20px; overflow:hidden; box-shadow: 0 24px 80px rgba(0,0,0,.35);}
+
+.sdc-modal-close{position:absolute; right: 10px; top: 10px; width: 42px; height: 42px; border:0; border-radius: 999px; background: rgba(0,0,0,.06); font-size: 28px; line-height: 40px; cursor:pointer; z-index: 3;}
+
+.sdc-modal-content{display:grid; grid-template-columns: 1.1fr .9fr; gap: 16px; padding: 14px; overflow:auto; max-height: calc(100% - 0px);}
+
+.sdc-modal-gallery{min-width: 0;}
+.sdc-gallery-main{position:relative; width:100%; padding-top: 100%; background:#f6f7fb; border-radius: 16px; overflow:hidden; touch-action: pan-y;}
+.sdc-gallery-main img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+
+.sdc-gallery-nav{position:absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border:0; border-radius: 999px; background: rgba(255,255,255,.88); box-shadow: 0 10px 22px rgba(0,0,0,.16); font-size: 28px; line-height: 44px; cursor:pointer;}
+.sdc-gallery-nav.sdc-prev{left: 10px;}
+.sdc-gallery-nav.sdc-next{right: 10px;}
+
+.sdc-gallery-thumbs{display:flex; gap: 10px; margin-top: 12px; overflow:auto; padding-bottom: 4px;}
+.sdc-gallery-thumbs button{border:0; padding:0; background: transparent; border-radius: 12px; overflow:hidden; width: 64px; height: 64px; flex: 0 0 auto; outline: 2px solid transparent; cursor:pointer;}
+.sdc-gallery-thumbs img{width:100%; height:100%; object-fit:cover;}
+.sdc-gallery-thumbs button.is-active{outline-color: rgba(37,211,102,.65);}
+
+.sdc-modal-info{min-width: 0;}
+.sdc-modal-title{font-weight: 900; font-size: 20px; color:#111; line-height: 1.2;}
+.sdc-modal-badges{display:flex; gap: 8px; flex-wrap:wrap; margin-top: 10px;}
+.sdc-modal-price{margin-top: 10px; font-weight: 900; font-size: 18px;}
+.sdc-modal-desc{margin-top: 10px; color:#444; line-height: 1.45; white-space: pre-wrap;}
+
+.sdc-modal-details{margin-top: 12px; border-top: 1px solid rgba(0,0,0,.06); padding-top: 12px;}
+.sdc-modal-details .sdc-kv{display:grid; grid-template-columns: 120px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed rgba(0,0,0,.06);}
+.sdc-modal-details .sdc-k{font-weight: 800; color:#111; font-size: 13px;}
+.sdc-modal-details .sdc-v{color:#333; font-size: 13px;}
+
+.sdc-modal-actions{display:flex; gap: 10px; flex-wrap:wrap; margin-top: 14px;}
+.sdc-modal-actions a,
+.sdc-modal-actions button{border-radius: 999px !important; font-weight: 800;}
+
+@media (max-width: 768px){
+  .sdc-modal-dialog{width: 100%; height: 100%; margin: 0; border-radius: 18px 18px 0 0;}
+  .sdc-modal-content{grid-template-columns: 1fr; padding: 12px; padding-bottom: 18px;}
+  .sdc-modal-title{font-size: 18px;}
+  .sdc-modal-details .sdc-kv{grid-template-columns: 110px 1fr;}
+  .sdc-modal-close{right: 8px; top: 8px;}
 }
