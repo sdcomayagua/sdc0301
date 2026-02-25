@@ -232,6 +232,34 @@
   </div>
   <!-- copyright section end -->
 
+  <!-- PRODUCT MODAL (Mobile-first) -->
+  <div id="sdcProductModal" class="sdc-modal" aria-hidden="true">
+    <div class="sdc-modal-backdrop" data-sdc-close></div>
+    <div class="sdc-modal-dialog" role="dialog" aria-modal="true" aria-label="Detalles del producto">
+      <button class="sdc-modal-close" type="button" aria-label="Cerrar" data-sdc-close>&times;</button>
+
+      <div class="sdc-modal-content">
+        <div class="sdc-modal-gallery">
+          <div class="sdc-gallery-main" id="sdcGalleryMain">
+            <button class="sdc-gallery-nav sdc-prev" type="button" aria-label="Foto anterior" id="sdcGalleryPrev">&#8249;</button>
+            <img id="sdcModalMainImg" src="images/computer-img.png" alt="Producto" loading="lazy">
+            <button class="sdc-gallery-nav sdc-next" type="button" aria-label="Foto siguiente" id="sdcGalleryNext">&#8250;</button>
+          </div>
+          <div id="sdcModalThumbs" class="sdc-gallery-thumbs" aria-label="Miniaturas"></div>
+        </div>
+
+        <div class="sdc-modal-info">
+          <div class="sdc-modal-title" id="sdcModalTitle">Producto</div>
+          <div class="sdc-modal-badges" id="sdcModalBadges"></div>
+          <div class="sdc-modal-price" id="sdcModalPrice"></div>
+          <div class="sdc-modal-desc" id="sdcModalDesc"></div>
+          <div class="sdc-modal-details" id="sdcModalDetails"></div>
+          <div class="sdc-modal-actions" id="sdcModalActions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Javascript files-->
   <script src="js/jquery.min.js"></script>
